@@ -1,0 +1,4 @@
+bmiCalculator
+=============
+
+calculate dAILY BMI 
