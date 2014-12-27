@@ -1,5 +1,6 @@
 package bmicalculator.ctraining.com.bmicalculator;
 
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -8,22 +9,55 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    public EditText bmiHeight = (EditText) findViewById(R.id.bmiHeight);// = (EditText) findViewById(R.id.bmiHeight);
+    public EditText bmiWeight= (EditText) findViewById(R.id.bmiWeight); // = (EditText) findViewById(R.id.bmiWeight);
+    public Button btnCalculate = (Button) findViewById(R.id.btnCalculate);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //find View Elements
+//        bmiHeight
+//        bmiWeight
+
+//
+//        OnClickListener oclListen = new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                //perform actions for on click
+//            }
+//        };
+
+        btnCalculate.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //bmiHeight.setText("Button Pressed");
+                btnCalculate.setText("Done");
+            }
+        });
+
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
     }
+
+
 
 
     @Override
@@ -62,5 +96,9 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
+
+
+
+
     }
 }
